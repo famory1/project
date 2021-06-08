@@ -42,6 +42,13 @@ $(document).ready(function(){
 	});
 });
 
+$(document).ready(function(){
+ $('.talants__link').click(function(){
+ 		$(this).toggleClass('active').next().slideToggle(300);
+ 	});
+});
+
+
 // Липкая шапка
 window.onscroll = function showHeader() {
 
@@ -88,6 +95,7 @@ new Swiper('.company__list', {
 	},
 });
 
+// Фильтр
 $(document).ready(function(){
 	let filter = $("[data-filter]");
 	$('.company__list-item1').addClass('active');
@@ -108,6 +116,7 @@ $(document).ready(function(){
 		});
 	});
 });
+
 
 // Попап открывается при нажатии на любую кнопку с классом, представленным ниже
 const popupLinks = document.querySelectorAll('.popup-link');
@@ -257,3 +266,128 @@ $(document).ready(function() {
 	    }, 1200);
 	});
 });
+
+
+
+// Перевод страницы на другой язык
+
+var arrLang = {
+  'en': {
+    'services': 'Services',
+    'product': 'Product',
+    'clients': 'Clients',
+    'contacts': 'Contacts',
+    'main__title': 'We combine the best talents with dream teams',
+    'btn':'lorem',
+    'btn1':'lorem',
+    'main__subtitle': 'lorem lorem lorem lorem',
+    'talants__title': 'lorem lorem lorem lorem',
+    'talants__text': 'lorem lorem lorem lorem',
+    'talants__link1': 'lorem lorem lorem lorem',
+    'talants__board1': 'lorem lorem lorem lorem',
+    'talants__link2': 'lorem lorem lorem lorem',
+    'talants__board2': 'lorem lorem lorem lorem',
+    'talants__link3': 'lorem lorem lorem lorem',
+    'talants__board3': 'lorem lorem lorem lorem',
+    'talants__link4': 'lorem lorem lorem lorem',
+    'talants__board4': 'lorem lorem lorem lorem',
+    'talants__link5': 'lorem lorem lorem lorem',
+    'talants__board5': 'lorem lorem lorem lorem',
+    'profile__title': 'lorem lorem lorem lorem',
+    'profile__subtitle1': 'lorem lorem lorem lorem',
+    'profile__desc1': 'lorem lorem lorem lorem',
+    'profile__subtitle2': 'lorem lorem lorem lorem',
+    'profile__desc2': 'lorem lorem lorem lorem',
+    'profile__subtitle3': 'lorem lorem lorem lorem',
+    'profile__desc3': 'lorem lorem lorem lorem',
+    'profile__subtitle4': 'lorem lorem lorem lorem',
+    'profile__desc4': 'lorem lorem lorem lorem',
+    'why__title': 'lorem lorem lorem lorem',
+    'why__desc1': 'lorem lorem lorem lorem',
+    'why__desc2': 'lorem lorem lorem lorem',
+    'why__desc3': 'lorem lorem lorem lorem',
+    'why__desc4': 'lorem lorem lorem lorem',
+    'product__btn': 'lorem lorem lorem lorem',
+    'product__desc': 'lorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem lorem',
+    'task__title': 'lorem lorem',
+    'task__item1': 'lorem lorem lorem lorem',
+    'task__item2': 'lorem lorem lorem lorem',
+    'task__item3': 'lorem lorem lorem lorem',
+    'task__item4': 'lorem lorem lorem lorem',
+    'task__item5': 'lorem lorem lorem lorem',
+    'task__item6': 'lorem lorem lorem lorem',
+    'task__btn': 'lorem lorem lorem lorem',
+    'footer__desc': 'lorem lorem lorem lorem',
+    'request__title': 'lorem lorem',
+    'success__title': 'lorem lorem lorem lorem',
+    'error__title': 'lorem lorem lorem lorem',
+  },
+  'ru': {
+    'services': 'Услуги',
+    'product': 'Продукт',
+    'clients': 'Клиенты',
+    'contacts': 'Контакты',
+    'main__title': 'Мы объединяем лучшие таланты с командами мечты',
+    'btn':'Оставить заявку',
+    'btn1':'Оставить заявку',
+    'main__subtitle': 'Помогаем технологическим и продуктовым компаниям усиливать команды топовыми специалистами',
+    'talants__title': 'Ищем редкие таланты, которые помогут бизнесу расти',
+    'talants__text': 'Мы специализируемся на поиске сильных кандидатов для продуктовых IT компаний.Такие кандидаты как правило не ищут работу. Найти подходящего сильного кандидата и переманить его в другую компанию — целое искусство.Мы помогаем компаниям сделать такой сложный поиск простым и прозрачным.',
+    'talants__link1': 'Разработка, тестирование, DevOps и SRE',
+    'talants__board1': 'lorem lorem lorem lorem',
+    'talants__link2': 'Продакт-менеджмент и продуктовая аналитика',
+    'talants__board2': 'lorem lorem lorem lorem',
+    'talants__link3': 'Data Science, ML, CV, NLP',
+    'talants__board3': 'lorem lorem lorem lorem',
+    'talants__link4': 'Developer Relations',
+    'talants__board4': 'lorem lorem lorem lorem',
+    'talants__link5': 'Руководители высшего звена / C-level',
+    'talants__board5': 'lorem lorem lorem lorem',
+    'profile__title': 'Наш профиль — подбор в сложных технологических индустриях',
+    'profile__subtitle1': 'ИТ-рекрутинг',
+    'profile__desc1': 'Помогаем найти опытных специалистов в области анализа данных, продакт-менеджмента и разработки.',
+    'profile__subtitle2': 'Подбор руководителей',
+    'profile__desc2': 'Найдем лида или руководителя команды разработки, data science или продуктовой функции. Подберём менеджера, который справится даже с большой командой в ~30 человек.',
+    'profile__subtitle3': 'Подбор руководителей высшего звена',
+    'profile__desc3': 'Executive search по направлениям: CPO, CTO, CIO, Chief Data Scientist и VP engineering.',
+    'profile__subtitle4': 'Исследование рынка',
+    'profile__desc4': 'Глубокий бизнес-анализ рынка компаний-конкурентов и целевых компаний-доноров для решения задачи вашего бизнеса. Формируем максимально возможный список лучших релевантных кандидатов.',
+    'why__title': 'Почему вам стоит работать с нами?',
+    'why__desc1': 'В нашей команде работают опытные консультанты, обладающие широкой экспертизой основанной на техническоми управленческом бэкграунде.',
+    'why__desc2': 'Мы понимаем и вникаем в специфику ваших требований и особенности команды,выстраивая эффективное сотрудничество.',
+    'why__desc3': 'Наши специалисты располагают широкой сетью контактов с топовыми профессионаламив индустрии и способны отвечать самым сложным запросам клиента.',
+    'why__desc4': 'Широкая география. Мы строим мосты между талантами с разным профессиональным, культурным фундаментом из разных частей света.',
+    'product__btn': 'Подробнее',
+    'product__desc': 'Мы специализируемся на поиске сильных кандидатов для продуктовых IT компаний.Такие кандидаты как правило не ищут работу. Найти подходящего сильного кандидата и переманить его в другую компанию — целое искусство.',
+    'task__title': 'Обсудим ваши задачи?',
+    'task__item1': 'lorem lorem lorem lorem',
+    'task__item2': 'lorem lorem lorem lorem',
+    'task__item3': 'lorem lorem lorem lorem',
+    'task__item4': 'lorem lorem lorem lorem',
+    'task__item5': 'lorem lorem lorem lorem',
+    'task__item6': 'lorem lorem lorem lorem',
+    'task__btn': 'Отправить',
+    'footer__desc': 'Политика конфидециальности',
+    'request__title': 'Оставить заявку',
+    'success__title': 'Ваша заявка успешно отправлена!',
+    'error__title': 'Ваша заявка не отправлена',
+  }
+}
+
+  $(function() {
+    $('.translate').click(function() {
+      event.preventDefault();
+      var lang = $(this).attr('id');
+      $(this).addClass('hide');
+      $('.main__language_ru').removeClass('hide');
+      $('.main__language_ru').click(function(){
+      	$(this).addClass('hide');
+      	$('.main__language_en').removeClass('hide');
+      });
+
+      $('div, li, a, button, span, input').each(function(index, item) {
+        $(this).text(arrLang[lang][$(this).attr('key')]);
+        $(this).text(arrLang[lang][$(this).attr('key')]);
+      });
+    });
+  });
