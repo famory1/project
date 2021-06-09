@@ -960,12 +960,98 @@ a {
   visibility: visible;
 }
 
+.privacy.open {
+  opacity: 1;
+  visibility: visible;
+}
+
 .success {
   display: none;
 }
 
 .error {
   display: none;
+}
+
+.privacy {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 10;
+  top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  color: #000D23;
+}
+
+.privacy__body {
+  background-color: #ffffff;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 3px;
+  max-width: 800px;
+  max-height: 1000px;
+  padding: 0px 10px 40px 10px;
+}
+
+.privacy__title {
+  padding-top: 40px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.privacy__close {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.privacy__desc {
+  font-size: 16px;
+  line-height: 130%;
+  padding: 0px 40px 40px 40px;
+  overflow: auto;
+  overflow-x: hidden;
+  color: #000D23;
+  width: 100%;
+}
+
+.privacy__desc::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f9f9fd;
+}
+
+.privacy__desc::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #A7A7A7;
 }
 
 .main {
@@ -1180,10 +1266,28 @@ a {
 
 .talants__board {
   display: none;
-  padding-top: 30px;
+  padding-top: 10px;
   font-size: 15px;
   line-height: 130%;
   max-width: 500px;
+}
+
+.talants__board-item {
+  position: relative;
+  margin: 15px 0px 0px 60px;
+}
+
+.talants__board-item:before {
+  content: "";
+  width: 32px;
+  height: 21px;
+  position: absolute;
+  background: url("../img/slider-arrow.svg");
+  left: -10%;
+  top: 15px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .talants__item {
@@ -1234,9 +1338,9 @@ a {
 
 .talants__link.active:before {
   height: 2px;
-  -webkit-transform: translate(-200%, 800%);
-      -ms-transform: translate(-200%, 800%);
-          transform: translate(-200%, 800%);
+  -webkit-transform: translate(-200%, 650%);
+      -ms-transform: translate(-200%, 650%);
+          transform: translate(-200%, 650%);
 }
 
 .talants__link:after {
@@ -1501,6 +1605,107 @@ a {
   transition: 0.5s;
 }
 
+.team__body {
+  padding: 125px 15px 40px 15px;
+  position: relative;
+}
+
+.team__group {
+  padding-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.team__item {
+  position: relative;
+}
+
+.team__item:hover .team__desc {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  visibility: visible;
+}
+
+.team__img {
+  -webkit-box-shadow: 0px 4px 28px 4px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 4px 28px 4px rgba(0, 0, 0, 0.16);
+}
+
+.team__desc {
+  cursor: default;
+  width: 300px;
+  height: 400px;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 170px 45px 0px 45px;
+  background-color: rgba(9, 169, 250, 0.9);
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  visibility: hidden;
+}
+
+.team__name {
+  font-size: 22px;
+  position: relative;
+  padding: 20px 0px 10px 0px;
+}
+
+.team__name:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  bottom: 0;
+  left: 0;
+}
+
+.team__surname {
+  font-size: 22px;
+  position: relative;
+  padding: 20px 0px 10px 0px;
+}
+
+.team__surname:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  bottom: 0;
+  left: 0;
+}
+
+.team__work {
+  font-size: 14px;
+  line-height: 138%;
+  max-width: 150px;
+  padding-top: 25px;
+}
+
+.team__slider-bar {
+  padding-top: 60px;
+}
+
+.team__slider-arrow {
+  padding: 0 25px;
+  cursor: pointer;
+}
+
 .task__body {
   padding: 125px 15px;
   color: #000D23;
@@ -1615,6 +1820,10 @@ a {
     font-size: calc(14px + 6 * ((100vw - 320px) / 880));
   }
 
+  .privacy__desc {
+    font-size: calc(10px + 6 * ((100vw - 320px) / 880));
+  }
+
   .main__subtitle {
     font-size: calc(15px + 3 * ((100vw - 320px) / 880));
   }
@@ -1663,6 +1872,18 @@ a {
     font-size: calc(10px + 4 * ((100vw - 320px) / 880));
   }
 
+  .team__name {
+    font-size: calc(14px + 8 * ((100vw - 320px) / 880));
+  }
+
+  .team__surname {
+    font-size: calc(14px + 8 * ((100vw - 320px) / 880));
+  }
+
+  .team__work {
+    font-size: calc(11px + 3 * ((100vw - 320px) / 880));
+  }
+
   .task__item {
     font-size: calc(14px + 8 * ((100vw - 320px) / 880));
   }
@@ -1696,6 +1917,12 @@ a {
 
   .talants__link {
     width: 500px;
+  }
+
+  .talants__link.active:before {
+    -webkit-transform: translate(-200%, 400%);
+        -ms-transform: translate(-200%, 400%);
+            transform: translate(-200%, 400%);
   }
 
   .talants__text {
@@ -1941,6 +2168,20 @@ a {
   }
 }
 
+@media (max-width: 660px) {
+  .team__body {
+    padding: 50px 7px 7px 20px;
+  }
+
+  .team__group {
+    padding-top: 30px;
+  }
+
+  .team__slider-bar {
+    padding-top: 30px;
+  }
+}
+
 @media (max-width: 630px) {
   .company__body {
     padding: 50px 7px;
@@ -1969,6 +2210,13 @@ a {
   }
 }
 
+@media (max-width: 560px) {
+  .privacy__body {
+    max-width: 320px;
+    max-height: 500px;
+  }
+}
+
 @media (max-width: 540px) {
   .talants__body {
     padding: 50px 7px;
@@ -1981,6 +2229,12 @@ a {
 
   .talants__link {
     width: 350px;
+  }
+
+  .talants__board-item:before {
+    -webkit-transform: translate(-50%, -50%) scale(0.7);
+        -ms-transform: translate(-50%, -50%) scale(0.7);
+            transform: translate(-50%, -50%) scale(0.7);
   }
 
   .talants__text {

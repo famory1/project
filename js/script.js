@@ -94,6 +94,49 @@ new Swiper('.company__list', {
 		disableOnInteraction: false,
 	},
 });
+// Второй слайдер с командой
+new Swiper('.team__group', {
+	// Стрелки
+    navigation: {
+	    nextEl: '.team__slider-arrow-next',
+	    prevEl: '.team__slider-arrow-prev',
+	 },
+	// Буллеты
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true
+	},
+	// Количество слайдов на одной странице
+	slidesPerView: 3,
+	// активный слайд по центру
+	// Параметр бесконечности
+	loop: true,
+	// Скорость прокрутки слайдера
+	speed: 800,
+	preloadImages: false,
+	lazy: {
+		loadOnTransitionStart: false,
+		loadPrevNext: false,
+	},
+	autoplay: {
+		delay: 6000,
+		disableOnInteraction: false,
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			width: 250,
+			spaceBetween: 80,
+		},
+
+		660: {
+			slidesPerView: 2,
+		},
+		1020: {
+			slidesPerView: 3,
+		}
+	},
+});
 
 // Фильтр
 $(document).ready(function(){
@@ -247,7 +290,7 @@ $(document).ready(function() {
 });
 
 // Плавная прокуртка до нужного раздела
-$(".main__link .main__logo").on("click", function(e){
+$(".main__link .main__logo, .main__btn, .main__btn1").on("click", function(e){
 	$('body').removeClass('lock');
     e.preventDefault();
     var anchor = $(this).attr('href');
@@ -293,6 +336,11 @@ var arrLang = {
     'talants__board4': 'lorem lorem lorem lorem',
     'talants__link5': 'lorem lorem lorem lorem',
     'talants__board5': 'lorem lorem lorem lorem',
+    'talants__board6': 'lorem lorem lorem lorem',
+    'talants__board7': 'lorem lorem lorem lorem',
+    'talants__board8': 'lorem lorem lorem lorem',
+    'talants__board9': 'lorem lorem lorem lorem',
+    'talants__board10': 'lorem lorem lorem lorem',
     'profile__title': 'lorem lorem lorem lorem',
     'profile__subtitle1': 'lorem lorem lorem lorem',
     'profile__desc1': 'lorem lorem lorem lorem',
@@ -310,7 +358,7 @@ var arrLang = {
     'product__btn': 'lorem lorem lorem lorem',
     'product__desc': 'lorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem loremlorem lorem lorem lorem',
     'task__title': 'lorem lorem',
-    'task__item1': 'lorem lorem lorem lorem',
+    'task__item1': 'Name and surname',
     'task__item2': 'lorem lorem lorem lorem',
     'task__item3': 'lorem lorem lorem lorem',
     'task__item4': 'lorem lorem lorem lorem',
@@ -321,6 +369,21 @@ var arrLang = {
     'request__title': 'lorem lorem',
     'success__title': 'lorem lorem lorem lorem',
     'error__title': 'lorem lorem lorem lorem',
+    'team__title': 'Team',
+    'team__name1': 'Lorem',
+    'team__surname1': 'lorem isum',
+    'team__work1': 'lorem',
+    'team__name2': 'Lorem',
+    'team__surname2': 'lorem isum',
+    'team__work2': 'lorem',
+    'team__name3': 'Lorem',
+    'team__surname3': 'lorem isum',
+    'team__work3': 'lorem',
+    'team__name4': 'Lorem',
+    'team__surname4': 'lorem isum',
+    'team__work4': 'lorem',
+    'privacy__title': 'lorem',
+    'privacy__desc': 'loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem',
   },
   'ru': {
     'services': 'Услуги',
@@ -343,6 +406,11 @@ var arrLang = {
     'talants__board4': 'lorem lorem lorem lorem',
     'talants__link5': 'Руководители высшего звена / C-level',
     'talants__board5': 'lorem lorem lorem lorem',
+    'talants__board6': 'lorem lorem lorem lorem',
+    'talants__board7': 'lorem lorem lorem lorem',
+    'talants__board8': 'lorem lorem lorem lorem',
+    'talants__board9': 'lorem lorem lorem lorem',
+    'talants__board10': 'lorem lorem lorem lorem',
     'profile__title': 'Наш профиль — подбор в сложных технологических индустриях',
     'profile__subtitle1': 'ИТ-рекрутинг',
     'profile__desc1': 'Помогаем найти опытных специалистов в области анализа данных, продакт-менеджмента и разработки.',
@@ -360,17 +428,32 @@ var arrLang = {
     'product__btn': 'Подробнее',
     'product__desc': 'Мы специализируемся на поиске сильных кандидатов для продуктовых IT компаний.Такие кандидаты как правило не ищут работу. Найти подходящего сильного кандидата и переманить его в другую компанию — целое искусство.',
     'task__title': 'Обсудим ваши задачи?',
-    'task__item1': 'lorem lorem lorem lorem',
-    'task__item2': 'lorem lorem lorem lorem',
-    'task__item3': 'lorem lorem lorem lorem',
-    'task__item4': 'lorem lorem lorem lorem',
-    'task__item5': 'lorem lorem lorem lorem',
-    'task__item6': 'lorem lorem lorem lorem',
+    'task__item1': 'Ваше имя и фамилия',
+    'task__item2': 'Email',
+    'task__item3': 'Компания и должность',
+    'task__item4': 'Кого вы хотите найти?',
+    'task__item5': 'Номер телефона',
+    'task__item6': 'Сколько у вас вакансий?',
     'task__btn': 'Отправить',
     'footer__desc': 'Политика конфидециальности',
     'request__title': 'Оставить заявку',
     'success__title': 'Ваша заявка успешно отправлена!',
     'error__title': 'Ваша заявка не отправлена',
+    'team__title': 'Команда',
+    'team__name1': 'Lorem',
+    'team__surname1': 'lorem isum',
+    'team__work1': 'lorem',
+    'team__name2': 'Lorem',
+    'team__surname2': 'lorem isum',
+    'team__work2': 'lorem',
+    'team__name3': 'Lorem',
+    'team__surname3': 'lorem isum',
+    'team__work3': 'lorem',
+    'team__name4': 'Lorem',
+    'team__surname4': 'lorem isum',
+    'team__work4': 'lorem',
+    'privacy__title': 'Политика конфиденциальности',
+    'privacy__desc': 'loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem',
   }
 }
 
@@ -378,6 +461,7 @@ var arrLang = {
     $('.translate').click(function() {
       event.preventDefault();
       var lang = $(this).attr('id');
+
       $(this).addClass('hide');
       $('.main__language_ru').removeClass('hide');
       $('.main__language_ru').click(function(){
@@ -388,6 +472,15 @@ var arrLang = {
       $('div, li, a, button, span, input').each(function(index, item) {
         $(this).text(arrLang[lang][$(this).attr('key')]);
         $(this).text(arrLang[lang][$(this).attr('key')]);
+        $('.task__item1').attr('placeholder', (arrLang[lang]['task__item1']));
+        $('.task__item2').attr('placeholder', (arrLang[lang]['task__item2']));
+        $('.task__item3').attr('placeholder', (arrLang[lang]['task__item3']));
+        $('.task__item4').attr('placeholder', (arrLang[lang]['task__item4']));
+        $('.task__item5').attr('placeholder', (arrLang[lang]['task__item5']));
+        $('.task__item6').attr('placeholder', (arrLang[lang]['task__item6']));
       });
     });
   });
+
+
+    
