@@ -134,6 +134,7 @@ new Swiper('.team__group', {
 		},
 		1020: {
 			slidesPerView: 3,
+			spaceBetween: 82,
 		}
 	},
 });
