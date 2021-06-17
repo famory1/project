@@ -1115,10 +1115,6 @@ a {
           transform: translateY(-5px);
 }
 
-.main__item:hover .main__link:after {
-  opacity: 1;
-}
-
 .main__item:last-child {
   padding-right: 0px;
 }
@@ -1130,21 +1126,6 @@ a {
 .main__link {
   font-weight: 400;
   position: relative;
-}
-
-.main__link:after {
-  content: '';
-  position: absolute;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-  width: 100%;
-  height: 8px;
-  background-color: #75D4F9;
-  left: 0;
-  bottom: -29px;
-  border-radius: 3px 3px 0px 0px;
-  opacity: 0;
 }
 
 .main__left-side {
