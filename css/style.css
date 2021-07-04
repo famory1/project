@@ -1397,7 +1397,7 @@ a {
 }
 
 .profile__desc {
-  max-width: 490px;
+  max-width: 400px;
   margin-right: 40px;
   font-size: 18px;
   color: #A7A7A7;
@@ -1467,10 +1467,14 @@ a {
 }
 
 .product__desc {
-  padding: 45px 0px 95px 0px;
+  padding: 45px 0px 0px 0px;
   max-width: 365px;
   font-size: 18px;
   color: #A7A7A7;
+}
+
+.product__desc1 {
+  padding: 15px 0px 95px 0px;
 }
 
 .product__btn {
@@ -1795,6 +1799,7 @@ a {
   font-weight: 400;
   border-bottom: 1px solid #ffffff;
   padding-top: 15px;
+  border: none;
 }
 
 .footer__link {
@@ -1917,12 +1922,6 @@ a {
     width: 500px;
   }
 
-  .talants__link.active:before {
-    -webkit-transform: translate(-200%, 400%);
-        -ms-transform: translate(-200%, 400%);
-            transform: translate(-200%, 400%);
-  }
-
   .talants__text {
     max-width: 410px;
   }
@@ -1941,6 +1940,11 @@ a {
 }
 
 @media (max-width: 1000px) {
+  .profile__desc {
+    margin-right: 0;
+    max-width: 365px;
+  }
+
   .company__title {
     margin: 0 auto;
   }
